@@ -111,11 +111,6 @@ def simulate_game(clouds, stars):
         screen.fill(sky_color)
         SEE_THROUGH.fill(ck)
         SEE_THROUGH.set_colorkey(ck)
-        
-        if not day:
-        #stars
-            for s in stars:
-                pygame.draw.ellipse(screen, WHITE, s)
 
         create_field(field_color, stripe_color)
 
