@@ -103,9 +103,9 @@ def simulate_game(clouds, stars):
         for c in clouds:
             c[0] -= 0.5
 
-        if c[0] < -100:
-            c[0] = random.randrange(800, 1600)
-            c[1] = random.randrange(0, 150)
+            if c[0] < -100:
+                c[0] = random.randrange(800, 1600)
+                c[1] = random.randrange(0, 150)
 
         # Drawing code (Describe the picture. It isn't actually drawn yet.)
         screen.fill(sky_color)
@@ -167,8 +167,7 @@ def draw_cloud(cloud_color, x, y):
     pygame.draw.ellipse(SEE_THROUGH, cloud_color, [x + 10, y, 16, 16])
     pygame.draw.ellipse(SEE_THROUGH, cloud_color, [x + 20, y + 8, 10, 10])
     pygame.draw.rect(SEE_THROUGH, cloud_color, [x + 6, y + 8, 18, 10])
-
-
+    
 def create_field(field_color, stripe_color):
     """This function draws the field and fill in the colors to accordingly.
     param field_color: dark green color of the field
@@ -362,9 +361,8 @@ def create_corner_flag():
     pygame.draw.polygon(screen, RED, [[132, 190], [125, 196], [135, 205]])
     #corner flag left
     pygame.draw.line(screen, BRIGHT_YELLOW, [660, 220], [665, 190], 3)
-    pygame.draw.polygon(screen, RED, [[668, 190], [675, 196], [665, 205]])    
-
-
+    pygame.draw.polygon(screen, RED, [[668, 190], [675, 196], [665, 205]])
+    
 main()
 
 # Close window and quit
