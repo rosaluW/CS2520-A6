@@ -54,9 +54,8 @@ def main():
 
 def night(stars):
     day = False
-    
     if not day:
-#stars
+    #stars
         for s in stars:
             pygame.draw.ellipse(screen, WHITE, s) 
 
