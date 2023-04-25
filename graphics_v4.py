@@ -241,7 +241,10 @@ def create_light_pole():
     pygame.draw.ellipse(screen, GRAY, [630, 195, 20, 10])
 
 
-def create_lights(light_color):   
+def create_lights(light_color):
+    """This function draws the 10 light bulbs on each side.
+    param GRAY: the color of bar of the light
+    param light_color: the color of light"""   
     #lights
     pygame.draw.line(screen, GRAY, [110, 60], [210, 60], 2)
     pygame.draw.ellipse(screen, light_color, [110, 40, 20, 20])
@@ -273,6 +276,8 @@ def create_lights(light_color):
 
 
 def create_net():
+    """This function draws the net of the goal.
+    param WHITE: the color of the net"""
     #net
     pygame.draw.line(screen, WHITE, [325, 140], [341, 200], 1)
     pygame.draw.line(screen, WHITE, [330, 140], [344, 200], 1)
@@ -345,6 +350,9 @@ def create_net():
 
 
 def create_stands():
+    """This function draws the stands.
+    param RED: the color of the wall
+    param WHITE: the color of the space where the audience should be."""
     #stands right
     pygame.draw.polygon(screen, RED, [[680, 220], [800, 340], [800, 290], [680, 180]])
     pygame.draw.polygon(screen, WHITE, [[680, 180], [800, 100], [800, 290]])
@@ -356,6 +364,9 @@ def create_stands():
     #people
     
 def create_corner_flag():
+    """This function creates the corner flags next to the stands
+    param BRIGHT_YELLOW: the color of the flags' poles
+    param RED: the color of the flag."""
     #corner flag right
     pygame.draw.line(screen, BRIGHT_YELLOW, [140, 220], [135, 190], 3)
     pygame.draw.polygon(screen, RED, [[132, 190], [125, 196], [135, 205]])

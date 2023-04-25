@@ -13,6 +13,6 @@ By the end of the assignment, you should have a well-organized and easily modifi
 ****************************************************************************************************************
 
 Contributors:
-Rosalu 
+Rosalu-Mae Wycoco
+Daniel Porras
 Aye Mon
-Daniel
