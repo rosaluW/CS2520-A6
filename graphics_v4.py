@@ -122,16 +122,17 @@ while not done:
             pygame.draw.ellipse(screen, WHITE, s)
 
 
-
+    """
+    This function draws the field and fill in the colors to accordingly.
+    param field_color: dark green color of the field
+    param stripe_color: lighter green color of the field
+    """
     def field():
         pygame.draw.rect(screen, field_color, [0, 180, 800 , 420])
         pygame.draw.rect(screen, stripe_color, [0, 180, 800, 42])
         pygame.draw.rect(screen, stripe_color, [0, 264, 800, 52])
         pygame.draw.rect(screen, stripe_color, [0, 368, 800, 62])
         pygame.draw.rect(screen, stripe_color, [0, 492, 800, 82])
-
-
-
     
     '''fence'''
     y = 170
@@ -158,6 +159,11 @@ while not done:
         draw_cloud(c[0], c[1])
     screen.blit(SEE_THROUGH, (0, 0))   
     
+    """
+    This function draws the center circle of the soccer field where the kickoffs are taken.
+    It also draws the sidelines and endlines of the soccer field.
+    param WHITE: the color of the sidelines, endlines and center circle.
+    """
     def out_of_bounds():
     #out of bounds lines
         pygame.draw.line(screen, WHITE, [0, 580], [800, 580], 5)
@@ -169,8 +175,11 @@ while not done:
     #safety circle
         pygame.draw.ellipse(screen, WHITE, [240, 500, 320, 160], 5)
 
-    
-
+    """
+    This function draws the scoreboard which is placed on top of the goal.
+    param BLACK: the color of the board
+    param WHITE: the corner of the board
+    """
     
     def score_board():
     #score board pole
@@ -179,7 +188,10 @@ while not done:
         pygame.draw.rect(screen, BLACK, [300, 40, 200, 90])
         pygame.draw.rect(screen, WHITE, [302, 42, 198, 88], 2)
 
-
+    """
+    This function draws the box of the goal.
+    param WHITE: the color of goal pole.
+    """
     #goal
     def goal():   
         pygame.draw.rect(screen, WHITE, [320, 140, 160, 80], 5)
@@ -188,7 +200,14 @@ while not done:
         pygame.draw.line(screen, WHITE, [480, 220], [460, 200], 3)
         pygame.draw.line(screen, WHITE, [320, 140], [340, 200], 3)
         pygame.draw.line(screen, WHITE, [480, 140], [460, 200], 3)
-        #Goal box
+
+    """
+    This function draws the borders of penalty and goal area.
+    param WHITE: the color of the border lines.
+    """
+    
+    def penalty_area():
+        #6 yard line goal box
         pygame.draw.line(screen, WHITE, [310, 220], [270, 270], 3)
         pygame.draw.line(screen, WHITE, [270, 270], [530, 270], 2)
         pygame.draw.line(screen, WHITE, [530, 270], [490, 220], 3)
@@ -198,7 +217,10 @@ while not done:
         pygame.draw.line(screen, WHITE, [620, 300], [540, 220], 5)
         #arc at the top of the goal box
         pygame.draw.arc(screen, WHITE, [330, 280, 140, 40], math.pi, 2 * math.pi, 5)
-
+    """
+    This function draws two poles of the lights that are placed next to the goal.
+    param GRAY: the color of the poles
+    """
     def light_pole():
         #light pole 1   
         pygame.draw.rect(screen, GRAY, [150, 60, 20, 140])
