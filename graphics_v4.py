@@ -3,8 +3,6 @@ import pygame
 import math
 import random
 
-# Initialize game engine
-pygame.init()
 #create our global variables!
 # Window
 SIZE = (800, 600)
@@ -44,28 +42,21 @@ SEE_THROUGH.set_alpha(150)
 SEE_THROUGH.fill((124, 118, 135))
 
 def main():
+    # Initialize game engine
+    pygame.init()
+
+    simulate_game()
+    
+
+def simulate_game():
+    """This function simulates the game by calling all of the functions to
+        draw the graphics and implements the game logic when user interaction
+        is detected"""
     stars = []
     clouds = []
     create_stars(stars)
     create_clouds(clouds)
-    simulate_game(stars, clouds)
 
-    
-def create_stars(stars):
-    for n in range(200):
-        x = random.randrange(0, 800)
-        y = random.randrange(0, 200)
-        r = random.randrange(1, 2)
-        stars.append([x, y, r, r])
-
-def create_clouds(clouds):
-    for i in range(20):
-        x = random.randrange(-100, 1600)
-        y = random.randrange(0, 150)
-        clouds.append([x, y])
-    
-
-def simulate_game(clouds, stars):
     # Config
     lights_on = True
     day = True
@@ -147,6 +138,21 @@ def simulate_game(clouds, stars):
         # Limit refresh rate of game loop 
         clock.tick(refresh_rate)
 
+
+def create_stars(stars):
+    """This function creates the stars in the sky"""
+    for n in range(200):
+        x = random.randrange(0, 800)
+        y = random.randrange(0, 200)
+        r = random.randrange(1, 2)
+        stars.append([x, y, r, r])
+
+def create_clouds(clouds):
+    """This function generates the clouds in the sky"""
+    for i in range(20):
+        x = random.randrange(-100, 1600)
+        y = random.randrange(0, 150)
+        clouds.append([x, y])
 
 def create_fence():
     """This function draws the fence
@@ -376,8 +382,10 @@ def create_corner_flag():
     #corner flag left
     pygame.draw.line(screen, BRIGHT_YELLOW, [660, 220], [665, 190], 3)
     pygame.draw.polygon(screen, RED, [[668, 190], [675, 196], [665, 205]])
-    
-main()
 
-# Close window and quit
-pygame.quit()
+    
+
+if __name__ == "__main__":
+    main()
+    # Close window and quit
+    pygame.quit()
