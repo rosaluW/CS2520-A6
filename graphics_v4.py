@@ -72,7 +72,9 @@ def simulate_game(clouds, stars):
     done = False
     while not done:
         # Event processing (React to key presses, mouse clicks, etc.)
-        ''' for now, we'll just check to see if the X is clicked '''
+        ''' for now, we'll just check to see if the X is clicked
+            if 'l' is pressed, turn the lights on or off
+            if 'd' is pressed, turn night mode or day mode on'''
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 done = True
@@ -113,25 +115,14 @@ def simulate_game(clouds, stars):
         SEE_THROUGH.set_colorkey(ck)
 
         create_field(field_color, stripe_color)
-
-        '''fence'''
-        y = 170
-        for x in range(5, 800, 30):
-            pygame.draw.polygon(screen, NIGHT_GRAY, [[x + 2, y], [x + 2, y + 15], [x, y + 15], [x, y]])
-
-        y = 170
-        for x in range(5, 800, 3):
-            pygame.draw.line(screen, NIGHT_GRAY, [x, y], [x, y + 15], 1)
-
-        x = 0
-        for y in range(170, 185, 4):
-            pygame.draw.line(screen, NIGHT_GRAY, [x, y], [x + 800, y], 1)
+        create_fence()
 
         if day:
             pygame.draw.ellipse(screen, BRIGHT_YELLOW, [520, 50, 40, 40])
         else:
             pygame.draw.ellipse(screen, WHITE, [520, 50, 40, 40]) 
             pygame.draw.ellipse(screen, sky_color, [530, 45, 40, 40])
+
 
         for c in clouds:
             draw_cloud(cloud_color, c[0], c[1])
@@ -146,6 +137,7 @@ def simulate_game(clouds, stars):
         create_net()
         create_stands()
         create_corner_flag()
+
         # DARKNESS
         if not day and not lights_on:
             screen.blit(DARKNESS, (0, 0))    
@@ -154,6 +146,22 @@ def simulate_game(clouds, stars):
         pygame.display.flip()
         # Limit refresh rate of game loop 
         clock.tick(refresh_rate)
+
+
+def create_fence():
+    """This function draws the fence
+        param NIGHT_GRAY sets the color of the fence as gray"""
+    y = 170
+    for x in range(5, 800, 30):
+        pygame.draw.polygon(screen, NIGHT_GRAY, [[x + 2, y], [x + 2, y + 15], [x, y + 15], [x, y]])
+
+    y = 170
+    for x in range(5, 800, 3):
+        pygame.draw.line(screen, NIGHT_GRAY, [x, y], [x, y + 15], 1)
+
+    x = 0
+    for y in range(170, 185, 4):
+        pygame.draw.line(screen, NIGHT_GRAY, [x, y], [x + 800, y], 1)
 
 
 def draw_cloud(cloud_color, x, y):
