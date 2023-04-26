@@ -118,6 +118,12 @@ def simulate_game():
         for c in clouds:
             draw_cloud(cloud_color, c[0], c[1])
         screen.blit(SEE_THROUGH, (0, 0))  
+        
+        if not day:
+        #stars
+            for s in stars:
+                pygame.draw.ellipse(screen, WHITE, s)
+                
 
         create_out_of_bound_lines()
         create_score_board()
