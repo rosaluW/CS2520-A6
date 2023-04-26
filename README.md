@@ -10,4 +10,9 @@ An important aspect of this assignment is the application of structural programm
 Throughout the assignment, you will be expected to communicate effectively with your group members using Git as a version control system. Git will help you collaborate on the project, track changes, and resolve conflicts that may arise during the development process. At the end of the assignment, you will need to publish your final project on a GitHub page, making sure to include all necessary documentation and a clear README file.
 
 By the end of the assignment, you should have a well-organized and easily modifiable codebase that can be adapted to meet a range of requirements or design preferences, utilizing structural programming techniques for efficient and functional code. Remember, you can form groups of 2 to 4 students for this assignment, depending on your preferences and the availability of your classmates.
+****************************************************************************************************************
 
+Contributors:
+Rosalu-Mae Wycoco
+Daniel Porras
+Aye Mon
